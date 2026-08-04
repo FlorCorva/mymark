@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menús Digitales | Cartas en PDF</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fff7ed',
+              500: '#f97316',
+              600: '#ea580c',
+              900: '#0f172a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 text-slate-800 antialiased font-sans flex flex-col min-h-screen">
+
+  <!-- Header / Navbar -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="#" class="text-2xl font-black tracking-tight text-slate-900">
+        MY<span class="text-brand-500">MARK</span>
+      </a>
+      
+      <a href="https://wa.me/5491100000000?text=Hola!%20Quería%20hacer%20una%20consulta" 
+         target="_blank"
+         class="bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-full font-semibold text-sm transition flex items-center gap-2 shadow-sm">
+        <i class="fa-brands fa-whatsapp text-lg"></i> Consultas
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-12 bg-gradient-to-b from-white to-slate-50 border-b border-slate-100">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <span class="inline-block px-3 py-1 bg-brand-50 text-brand-600 text-xs font-bold uppercase rounded-full mb-3">
+        Cartas & Menús Digitales
+      </span>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-4">
+        Elegí tu lugar favorito y descargá el menú en PDF
+      </h1>
+      <p class="text-slate-600 text-base md:text-lg max-w-2xl mx-auto">
+        Accedé a la carta gastronómica actualizada de cada uno de los espacios.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filtros y Listado de Locales -->
+  <section class="py-12 max-w-6xl mx-auto px-4 flex-grow">
+    
+    <!-- Filtros por tipo de propuesta -->
+    <div class="flex flex-wrap justify-center gap-2 mb-10" id="filter-buttons">
+      <button onclick="filterCategory('todos')" class="filter-btn active px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900 text-white shadow-sm transition">Todos los Locales</button>
+      <button onclick="filterCategory('restaurante')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Resto / Cantina</button>
+      <button onclick="filterCategory('pizza')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Pizzería & Fast Food</button>
+      <button onclick="filterCategory('sushi')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Sushi Nikkei</button>
+      <button onclick="filterCategory('tapas')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Sandwiches & Tapas</button>
+      <button onclick="filterCategory('cafe')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Café de Especialidad</button>
+    </div>
+
+    <!-- Grid de Locales (7 Tarjetas) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="menu-grid">
+      
+      <!-- 1. Cantina Fauc Gorina -->
+      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="restaurante">
+        <div class="aspect-video bg-slate-100 relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Cantina Fauc Gorina">
+          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
+            PDF
+          </span>
+        </div>
+        <div class="p-6 flex flex-col flex-grow justify-between">
+          <div>
+            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Cantina & Bodegón</span>
+            <h3 class="font-bold text-slate-900 text-xl mt-1">Cantina Fauc Gorina</h3>
+            <p class="text-slate-500 text-sm mt-2">Platos elaborados, cocina tradicional, vinos y propuestas para compartir.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100">
+            <a href="pdf/cantina-fauc-gorina.pdf" download="Menu_Cantina_Fauc_Gorina.pdf" target="_blank" 
+               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Amsterdam Pizza -->
+      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="pizza">
+        <div class="aspect-video bg-slate-100 relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Amsterdam Pizza">
+          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
+            PDF
+          </span>
+        </div>
+        <div class="p-6 flex flex-col flex-grow justify-between">
+          <div>
+            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Pizzería</span>
+            <h3 class="font-bold text-slate-900 text-xl mt-1">Amsterdam Pizza</h3>
+            <p class="text-slate-500 text-sm mt-2">Pizzas estilo artesanal, fainá, empanadas y variedad de estilos.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100">
+            <a href="pdf/Amsterdam_Gorina.pdf" download="Menu_Amsterdam_Pizza.pdf" target="_blank" 
+               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Merry's -->
+      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="pizza">
+        <div class="aspect-video bg-slate-100 relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Merry's">
+          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
+            PDF
+          </span>
+        </div>
+        <div class="p-6 flex flex-col flex-grow justify-between">
+          <div>
+            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Burgers & Gastrobar</span>
+            <h3 class="font-bold text-slate-900 text-xl mt-1">Merry's</h3>
+            <p class="text-slate-500 text-sm mt-2">Hamburguesas gourmet, tragos de autor, minuta rápida y opciones de cerveza artesanal.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100">
+            <a href="pdf/merrys.pdf" download="Menu_Merrys.pdf" target="_blank" 
+               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Parada Selecta Sandwiches y Tapas -->
+      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="tapas">
+        <div class="aspect-video bg-slate-100 relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Parada Selecta">
+          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
+            PDF
+          </span>
+        </div>
+        <div class="p-6 flex flex-col flex-grow justify-between">
+          <div>
+            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Sandwiches & Tapas</span>
+            <h3 class="font-bold text-slate-900 text-xl mt-1">Parada Selecta</h3>
+            <p class="text-slate-500 text-sm mt-2">Sandwiches de autor, picadas selectas, tapeo y fiambres de alta calidad.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100">
+            <a href="pdf/Parada_Selecta.pdf" download="Menu_Parada_Selecta.pdf" target="_blank" 
+               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Mura Sushi Nikkei -->
+      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="sushi">
+        <div class="aspect-video bg-slate-100 relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Mura Sushi Nikkei">
+          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
+            PDF
+          </span>
+        </div>
+        <div class="p-6 flex flex-col flex-grow justify-between">
+          <div>
+            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Sushi & Cocina Nikkei</span>
+            <h3 class="font-bold text-slate-900 text-xl mt-1">Mura Sushi Nikkei</h3>
+            <p class="text-slate-500 text-sm mt-2">Rolls especiales, combinados premium, ceviches y platos fusión nikkei.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100">
+            <a href="pdf/mura-sushi.pdf" download="Menu_Mura_Sushi_Nikkei.pdf" target="_blank" 
+               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Giulietta -->
+      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="restaurante">
+        <div class="aspect-video bg-slate-100 relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Giulietta">
+          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
+            PDF
+          </span>
+        </div>
+        <div class="p-6 flex flex-col flex-grow justify-between">
+          <div>
+            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Cocina Italiana</span>
+            <h3 class="font-bold text-slate-900 text-xl mt-1">Giulietta</h3>
+            <p class="text-slate-500 text-sm mt-2">Pastas caseras, especialidades italianas, carta de vinos y postres clasi-modernos.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100">
+            <a href="pdf/Giulietta.pdf" download="Menu_Giulietta.pdf" target="_blank" 
+               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Llama Coffee Roasters -->
+      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="cafe">
+        <div class="aspect-video bg-slate-100 relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Llama Coffee Roasters">
+          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
+            PDF
+          </span>
+        </div>
+        <div class="p-6 flex flex-col flex-grow justify-between">
+          <div>
+            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Café de Especialidad</span>
+            <h3 class="font-bold text-slate-900 text-xl mt-1">Llama Coffee Roasters</h3>
+            <p class="text-slate-500 text-sm mt-2">Tostadores de café, filtrados, pastelería de autor, avocado toasts y desayunos.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100">
+            <a href="pdf/Llama_Coffee.pdf" download="Menu_Llama_Coffee_Roasters.pdf" target="_blank" 
+               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 mt-auto">
+    <div class="max-w-6xl mx-auto px-4 text-center md:flex md:justify-between md:text-left">
+      <div class="mb-4 md:mb-0">
+        <p class="text-white font-bold text-lg">GASTROMENUS</p>
+        <p class="text-xs text-slate-500">Cartas Digitales en PDF</p>
+      </div>
+      <p class="text-xs text-slate-500 self-center">
+        © 2026 Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Script para filtrar -->
+  <script>
+    function filterCategory(category) {
+      const cards = document.querySelectorAll('.menu-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-slate-900', 'text-white', 'shadow-sm');
+        btn.classList.add('bg-slate-100', 'text-slate-600');
+      });
+      event.target.classList.remove('bg-slate-100', 'text-slate-600');
+      event.target.classList.add('bg-slate-900', 'text-white', 'shadow-sm');
+
+      cards.forEach(card => {
+        if (category === 'todos' || card.dataset.category === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
