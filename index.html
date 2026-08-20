@@ -31,7 +31,7 @@
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
       <a href="#" class="text-2xl font-black tracking-tight text-slate-900">
-        MY<span class="text-brand-500">MARK</span>
+        GASTRO<span class="text-brand-500">MENUS</span>
       </a>
       
       <a href="https://wa.me/5491100000000?text=Hola!%20Quería%20hacer%20una%20consulta" 
@@ -60,46 +60,26 @@
   <!-- Filtros y Listado de Locales -->
   <section class="py-12 max-w-6xl mx-auto px-4 flex-grow">
     
-    <!-- Filtros por tipo de propuesta -->
+    <!-- Filtros por categoría -->
     <div class="flex flex-wrap justify-center gap-2 mb-10" id="filter-buttons">
       <button onclick="filterCategory('todos')" class="filter-btn active px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900 text-white shadow-sm transition">Todos los Locales</button>
-      <button onclick="filterCategory('restaurante')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Resto / Cantina</button>
-      <button onclick="filterCategory('pizza')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Pizzería & Fast Food</button>
+      <button onclick="filterCategory('bodegon')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Bodegón</button>
+      <button onclick="filterCategory('parrilla')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Parrilla & Fuegos</button>
+      <button onclick="filterCategory('peruana')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Comida Peruana</button>
       <button onclick="filterCategory('sushi')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Sushi Nikkei</button>
+      <button onclick="filterCategory('pizza')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Pizzería</button>
       <button onclick="filterCategory('tapas')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Sandwiches & Tapas</button>
-      <button onclick="filterCategory('cafe')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Café de Especialidad</button>
+      <button onclick="filterCategory('cafe')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Cafetería</button>
+      <button onclick="filterCategory('heladeria')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Heladería</button>
     </div>
 
-    <!-- Grid de Locales (7 Tarjetas) -->
+    <!-- Grid de Locales (8 Tarjetas) -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="menu-grid">
       
-      <!-- 1. Cantina Fauc Gorina -->
-      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="restaurante">
-        <div class="aspect-video bg-slate-100 relative overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Cantina Fauc Gorina">
-          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
-            PDF
-          </span>
-        </div>
-        <div class="p-6 flex flex-col flex-grow justify-between">
-          <div>
-            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Cantina & Bodegón</span>
-            <h3 class="font-bold text-slate-900 text-xl mt-1">Cantina Fauc Gorina</h3>
-            <p class="text-slate-500 text-sm mt-2">Platos elaborados, cocina tradicional, vinos y propuestas para compartir.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100">
-            <a href="pdf/cantina-fauc-gorina.pdf" download="Menu_Cantina_Fauc_Gorina.pdf" target="_blank" 
-               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
-              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2. Amsterdam Pizza -->
+      <!-- 1. Amsterdam Pizza -->
       <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="pizza">
         <div class="aspect-video bg-slate-100 relative overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Amsterdam Pizza">
+          <img src="img/Amsterdam.jpg" class="w-full h-full object-cover" alt="Amsterdam Pizza">
           <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
             PDF
           </span>
@@ -108,7 +88,7 @@
           <div>
             <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Pizzería</span>
             <h3 class="font-bold text-slate-900 text-xl mt-1">Amsterdam Pizza</h3>
-            <p class="text-slate-500 text-sm mt-2">Pizzas estilo artesanal, fainá, empanadas y variedad de estilos.</p>
+            <p class="text-slate-500 text-sm mt-2">Pizzas estilo artesanal, fainá, empanadas y variedad de especialidades.</p>
           </div>
           <div class="mt-6 pt-4 border-t border-slate-100">
             <a href="pdf/Amsterdam_Gorina.pdf" download="Menu_Amsterdam_Pizza.pdf" target="_blank" 
@@ -119,33 +99,10 @@
         </div>
       </div>
 
-      <!-- 3. Merry's -->
-      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="pizza">
-        <div class="aspect-video bg-slate-100 relative overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Merry's">
-          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
-            PDF
-          </span>
-        </div>
-        <div class="p-6 flex flex-col flex-grow justify-between">
-          <div>
-            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Burgers & Gastrobar</span>
-            <h3 class="font-bold text-slate-900 text-xl mt-1">Merry's</h3>
-            <p class="text-slate-500 text-sm mt-2">Hamburguesas gourmet, tragos de autor, minuta rápida y opciones de cerveza artesanal.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100">
-            <a href="pdf/merrys.pdf" download="Menu_Merrys.pdf" target="_blank" 
-               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
-              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. Parada Selecta Sandwiches y Tapas -->
+      <!-- 2. Parada Selecta -->
       <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="tapas">
         <div class="aspect-video bg-slate-100 relative overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Parada Selecta">
+          <img src="img/Parada_Selecta.jpg" class="w-full h-full object-cover" alt="Parada Selecta">
           <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
             PDF
           </span>
@@ -165,10 +122,10 @@
         </div>
       </div>
 
-      <!-- 5. Mura Sushi Nikkei -->
+      <!-- 3. Mura Sushi Nikkei -->
       <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="sushi">
         <div class="aspect-video bg-slate-100 relative overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Mura Sushi Nikkei">
+          <img src="img/Mura.jpg" class="w-full h-full object-cover" alt="Mura Sushi Nikkei">
           <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
             PDF
           </span>
@@ -188,19 +145,88 @@
         </div>
       </div>
 
-      <!-- 6. Giulietta -->
-      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="restaurante">
+      <!-- 4. La Chimbotana -->
+      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="peruana">
         <div class="aspect-video bg-slate-100 relative overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Giulietta">
+          <img src="img/LaChimbotana.jpg" class="w-full h-full object-cover" alt="La Chimbotana">
           <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
             PDF
           </span>
         </div>
         <div class="p-6 flex flex-col flex-grow justify-between">
           <div>
-            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Cocina Italiana</span>
+            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Comida Peruana</span>
+            <h3 class="font-bold text-slate-900 text-xl mt-1">La Chimbotana</h3>
+            <p class="text-slate-500 text-sm mt-2">Auténtica gastronomía peruana: ceviches, lomo saltado, causas y ají de gallina.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100">
+            <a href="pdf/LaChimbotana.pdf" download="Menu_La_Chimbotana.pdf" target="_blank" 
+               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Le Grill's -->
+      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="parrilla">
+        <div class="aspect-video bg-slate-100 relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Le Grill's">
+          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
+            PDF
+          </span>
+        </div>
+        <div class="p-6 flex flex-col flex-grow justify-between">
+          <div>
+            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Carne & Fuego</span>
+            <h3 class="font-bold text-slate-900 text-xl mt-1">Le Grill's</h3>
+            <p class="text-slate-500 text-sm mt-2">Cortes de carne seleccionados a las brasas, achuras, guarniciones e ingredientes a la parrilla.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100">
+            <a href="pdf/LeGrills.pdf" download="Menu_Le_Grill.pdf" target="_blank" 
+               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Bondi -->
+      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="bodegon">
+        <div class="aspect-video bg-slate-100 relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Bondi Bodegón">
+          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
+            PDF
+          </span>
+        </div>
+        <div class="p-6 flex flex-col flex-grow justify-between">
+          <div>
+            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Bodegón Urbano</span>
+            <h3 class="font-bold text-slate-900 text-xl mt-1">Bondi</h3>
+            <p class="text-slate-500 text-sm mt-2">Clásicos de bodegón, milanesas abundantemente servidas, minutas y platos reconfortantes.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100">
+            <a href="pdf/Bondi.pdf" download="Menu_Bondi.pdf" target="_blank" 
+               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Giulietta -->
+      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="heladeria">
+        <div class="aspect-video bg-slate-100 relative overflow-hidden">
+          <img src="img/Giulietta.jpg" alt="Giulietta Gelato">
+          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
+            PDF
+          </span>
+        </div>
+        <div class="p-6 flex flex-col flex-grow justify-between">
+          <div>
+            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Heladería Artesanal</span>
             <h3 class="font-bold text-slate-900 text-xl mt-1">Giulietta</h3>
-            <p class="text-slate-500 text-sm mt-2">Pastas caseras, especialidades italianas, carta de vinos y postres clasi-modernos.</p>
+            <p class="text-slate-500 text-sm mt-2">Helados artesanales, sabores de autor, postres helados, cucuruchos y paletas.</p>
           </div>
           <div class="mt-6 pt-4 border-t border-slate-100">
             <a href="pdf/Giulietta.pdf" download="Menu_Giulietta.pdf" target="_blank" 
@@ -211,10 +237,10 @@
         </div>
       </div>
 
-      <!-- 7. Llama Coffee Roasters -->
+      <!-- 8. Llama Coffee Roasters -->
       <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="cafe">
         <div class="aspect-video bg-slate-100 relative overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Llama Coffee Roasters">
+          <img src="img/Llama_Coffee.jpg" class="w-full h-full object-cover" alt="Llama Coffee Roasters">
           <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
             PDF
           </span>
