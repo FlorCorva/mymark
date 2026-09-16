@@ -3,298 +3,235 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Menús Digitales | Cartas en PDF</title>
+  <title>Menús Digitales | MyMark</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            brand: {
-              50: '#fff7ed',
-              500: '#10b981',
-              600: '#059669',
-              900: '#0f172a'
-            }
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
           }
         }
       }
     }
   </script>
 </head>
-<body class="bg-gray-50 text-slate-800 antialiased font-sans flex flex-col min-h-screen">
+<body class="bg-stone-50 text-neutral-900 antialiased font-sans flex flex-col min-h-screen">
 
-  <!-- Header / Navbar -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
- <a href="#" class="inline-block">
-  <img 
-    src="img/mymark.svg" 
-    alt="Logo My Mark" 
-    class="h-8 w-auto" 
-  />
-</a>
+  <!-- Header / Navbar Minimalista -->
+  <header class="sticky top-0 z-50 bg-stone-50/80 backdrop-blur-md border-b border-stone-200/60">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="inline-block transition-opacity hover:opacity-75">
+        <img src="img/mymark.svg" alt="Logo My Mark" class="h-8 w-auto" />
+      </a>
+      <span class="text-xs uppercase tracking-widest text-neutral-400 font-medium">Cartas & Menús</span>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="py-12 bg-gradient-to-b from-white to-slate-50 border-b border-slate-100">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <span class="inline-block px-3 py-1 bg-brand-50 text-brand-600 text-xs font-bold uppercase rounded-full mb-3">
-        Cartas & Menús Digitales
-      </span>
-      <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-4">
-        Elegí tu lugar favorito y descargá el menú en PDF
-      </h1>
-      <p class="text-slate-600 text-base md:text-lg max-w-2xl mx-auto">
-        Accedé a la carta gastronómica actualizada de cada uno de los espacios.
-      </p>
-    </div>
+  <!-- Hero Section Centrado -->
+  <section class="pt-16 pb-12 max-w-4xl mx-auto px-6 text-center">
+    <h1 class="text-4xl md:text-5xl font-light tracking-tight text-neutral-900 leading-tight mb-3">
+      Descubrí <span class="font-semibold">las cartas</span>
+    </h1>
+    <p class="text-neutral-500 text-base max-w-md mx-auto">
+      Seleccioná un espacio para visualizar el menú online en tiempo real.
+    </p>
   </section>
 
-  <!-- Filtros y Listado de Locales -->
-  <section class="py-12 max-w-6xl mx-auto px-4 flex-grow">
-    
-    <!-- Filtros por categoría -->
-    <div class="flex flex-wrap justify-center gap-2 mb-10" id="filter-buttons">
-      <button onclick="filterCategory('todos')" class="filter-btn active px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900 text-white shadow-sm transition">Todos los Locales</button>
-      <button onclick="filterCategory('bodegon')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Bodegón</button>
-      <button onclick="filterCategory('parrilla')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Parrilla & Fuegos</button>
-      <button onclick="filterCategory('peruana')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Comida Peruana</button>
-      <button onclick="filterCategory('sushi')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Sushi Nikkei</button>
-      <button onclick="filterCategory('pizza')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Pizzería</button>
-      <button onclick="filterCategory('tapas')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Sandwiches & Tapas</button>
-      <button onclick="filterCategory('cafe')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Cafetería</button>
-      <button onclick="filterCategory('heladeria')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Heladería</button>
-    </div>
-
-    <!-- Grid de Locales (8 Tarjetas) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="menu-grid">
+  <!-- Grilla de Tarjetas -->
+  <main class="max-w-6xl mx-auto px-6 pb-24 flex-grow w-full">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       
       <!-- 1. Amsterdam Pizza -->
-      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="pizza">
-        <div class="aspect-video bg-slate-100 relative overflow-hidden">
-          <img src="img/Amsterdam.jpg" class="w-full h-full object-cover" alt="Amsterdam Pizza">
-          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
-            PDF
+      <a href="pdf/Amsterdam_Gorina.pdf" target="_blank" rel="noopener noreferrer" 
+         class="group relative h-64 md:h-72 rounded-3xl overflow-hidden bg-neutral-900 shadow-sm transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-8">
+        <img src="img/Amsterdam.jpg" alt="Amsterdam Pizza" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40">
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent"></div>
+
+        <!-- Slot Superior: Logo / Icono -->
+        <div class="relative z-10 flex items-center justify-between">
+          <div class="h-10 max-w-[140px] flex items-center">
+            <!-- Si tenés el logo en PNG blanco/transparente, reemplazá el span por la etiqueta img: -->
+            <!-- <img src="img/logo-amsterdam.png" alt="Logo Amsterdam" class="h-full w-auto object-contain brightness-0 invert"> -->
+            <span class="text-xs font-semibold uppercase tracking-widest text-stone-300/80 border border-white/20 rounded-full px-3 py-1 backdrop-blur-sm">Pizzería</span>
+          </div>
+          <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:scale-105">
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
           </span>
         </div>
-        <div class="p-6 flex flex-col flex-grow justify-between">
-          <div>
-            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Pizzería</span>
-            <h3 class="font-bold text-slate-900 text-xl mt-1">Amsterdam Pizza</h3>
-            <p class="text-slate-500 text-sm mt-2">Pizzas estilo artesanal, fainá, empanadas y variedad de especialidades.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100">
-            <a href="pdf/Amsterdam_Gorina.pdf" download="Menu_Amsterdam_Pizza.pdf" target="_blank" 
-               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
-              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
-            </a>
-          </div>
+
+        <!-- Info Inferior -->
+        <div class="relative z-10">
+          <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Amsterdam Pizza</h2>
         </div>
-      </div>
+      </a>
 
       <!-- 2. Parada Selecta -->
-      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="tapas">
-        <div class="aspect-video bg-slate-100 relative overflow-hidden">
-          <img src="img/Parada_Selecta.jpeg" class="w-full h-full object-cover" alt="Parada Selecta">
-          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
-            PDF
+      <a href="pdf/Parada_Selecta.pdf" target="_blank" rel="noopener noreferrer" 
+         class="group relative h-64 md:h-72 rounded-3xl overflow-hidden bg-neutral-900 shadow-sm transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-8">
+        <img src="img/Parada_Selecta.jpeg" alt="Parada Selecta" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40">
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent"></div>
+
+        <div class="relative z-10 flex items-center justify-between">
+          <div class="h-10 max-w-[140px] flex items-center">
+            <!-- <img src="img/logo-paradaselecta.png" alt="Logo Parada Selecta" class="h-full w-auto object-contain brightness-0 invert"> -->
+            <span class="text-xs font-semibold uppercase tracking-widest text-stone-300/80 border border-white/20 rounded-full px-3 py-1 backdrop-blur-sm">Sandwiches & Tapas</span>
+          </div>
+          <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:scale-105">
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
           </span>
         </div>
-        <div class="p-6 flex flex-col flex-grow justify-between">
-          <div>
-            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Sandwiches & Tapas</span>
-            <h3 class="font-bold text-slate-900 text-xl mt-1">Parada Selecta</h3>
-            <p class="text-slate-500 text-sm mt-2">Sandwiches de autor, picadas selectas, tapeo y fiambres de alta calidad.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100">
-            <a href="pdf/Parada_Selecta.pdf" download="Menu_Parada_Selecta.pdf" target="_blank" 
-               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
-              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
-            </a>
-          </div>
+
+        <div class="relative z-10">
+          <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Parada Selecta</h2>
         </div>
-      </div>
+      </a>
 
       <!-- 3. Mura Sushi Nikkei -->
-      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="sushi">
-        <div class="aspect-video bg-slate-100 relative overflow-hidden">
-          <img src="img/Mura.jpg" class="w-full h-full object-cover" alt="Mura Sushi Nikkei">
-          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
-            PDF
+      <a href="pdf/Mura.pdf" target="_blank" rel="noopener noreferrer" 
+         class="group relative h-64 md:h-72 rounded-3xl overflow-hidden bg-neutral-900 shadow-sm transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-8">
+        <img src="img/Mura.jpg" alt="Mura Sushi Nikkei" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40">
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent"></div>
+
+        <div class="relative z-10 flex items-center justify-between">
+          <div class="h-10 max-w-[140px] flex items-center">
+            <!-- <img src="img/logo-mura.png" alt="Logo Mura" class="h-full w-auto object-contain brightness-0 invert"> -->
+            <span class="text-xs font-semibold uppercase tracking-widest text-stone-300/80 border border-white/20 rounded-full px-3 py-1 backdrop-blur-sm">Sushi & Nikkei</span>
+          </div>
+          <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:scale-105">
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
           </span>
         </div>
-        <div class="p-6 flex flex-col flex-grow justify-between">
-          <div>
-            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Sushi & Cocina Nikkei</span>
-            <h3 class="font-bold text-slate-900 text-xl mt-1">Mura Sushi Nikkei</h3>
-            <p class="text-slate-500 text-sm mt-2">Rolls especiales, combinados premium, ceviches y platos fusión nikkei.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100">
-            <a href="pdf/Mura.pdf" download="Menu_Mura_Sushi_Nikkei.pdf" target="_blank" 
-               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
-              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
-            </a>
-          </div>
+
+        <div class="relative z-10">
+          <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Mura Sushi Nikkei</h2>
         </div>
-      </div>
+      </a>
 
       <!-- 4. La Chimbotana -->
-      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="peruana">
-        <div class="aspect-video bg-slate-100 relative overflow-hidden">
-          <img src="img/LaChimbotana.png" class="w-full h-full object-cover" alt="La Chimbotana">
-          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
-            PDF
+      <a href="pdf/LaChimbotana.pdf" target="_blank" rel="noopener noreferrer" 
+         class="group relative h-64 md:h-72 rounded-3xl overflow-hidden bg-neutral-900 shadow-sm transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-8">
+        <img src="img/LaChimbotana.png" alt="La Chimbotana" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40">
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent"></div>
+
+        <div class="relative z-10 flex items-center justify-between">
+          <div class="h-10 max-w-[140px] flex items-center">
+            <!-- <img src="img/logo-lachimbotana.png" alt="Logo La Chimbotana" class="h-full w-auto object-contain brightness-0 invert"> -->
+            <span class="text-xs font-semibold uppercase tracking-widest text-stone-300/80 border border-white/20 rounded-full px-3 py-1 backdrop-blur-sm">Cocina Peruana</span>
+          </div>
+          <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:scale-105">
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
           </span>
         </div>
-        <div class="p-6 flex flex-col flex-grow justify-between">
-          <div>
-            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Comida Peruana</span>
-            <h3 class="font-bold text-slate-900 text-xl mt-1">La Chimbotana</h3>
-            <p class="text-slate-500 text-sm mt-2">Auténtica gastronomía peruana: ceviches, lomo saltado, causas y ají de gallina.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100">
-            <a href="pdf/LaChimbotana.pdf" download="Menu_La_Chimbotana.pdf" target="_blank" 
-               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
-              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
-            </a>
-          </div>
+
+        <div class="relative z-10">
+          <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">La Chimbotana</h2>
         </div>
-      </div>
+      </a>
 
       <!-- 5. Le Grill's -->
-      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="parrilla">
-        <div class="aspect-video bg-slate-100 relative overflow-hidden">
-          <img src="img/LeGrill.png" class="w-full h-full object-cover" alt="Le Grill's">
-          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
-            PDF
+      <a href="pdf/LeGrills.pdf" target="_blank" rel="noopener noreferrer" 
+         class="group relative h-64 md:h-72 rounded-3xl overflow-hidden bg-neutral-900 shadow-sm transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-8">
+        <img src="img/LeGrill.png" alt="Le Grill's" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40">
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent"></div>
+
+        <div class="relative z-10 flex items-center justify-between">
+          <div class="h-10 max-w-[140px] flex items-center">
+            <!-- <img src="img/logo-legrills.png" alt="Logo Le Grill's" class="h-full w-auto object-contain brightness-0 invert"> -->
+            <span class="text-xs font-semibold uppercase tracking-widest text-stone-300/80 border border-white/20 rounded-full px-3 py-1 backdrop-blur-sm">Parrilla & Fuegos</span>
+          </div>
+          <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:scale-105">
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
           </span>
         </div>
-        <div class="p-6 flex flex-col flex-grow justify-between">
-          <div>
-            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Carne & Fuego</span>
-            <h3 class="font-bold text-slate-900 text-xl mt-1">Le Grill's</h3>
-            <p class="text-slate-500 text-sm mt-2">Cortes de carne seleccionados a las brasas, achuras, guarniciones e ingredientes a la parrilla.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100">
-            <a href="pdf/LeGrills.pdf" download="Menu_Le_Grill.pdf" target="_blank" 
-               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
-              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
-            </a>
-          </div>
+
+        <div class="relative z-10">
+          <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Le Grill's</h2>
         </div>
-      </div>
+      </a>
 
       <!-- 6. Bondi -->
-      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="bodegon">
-        <div class="aspect-video bg-slate-100 relative overflow-hidden">
-          <img src="img/Bondi.png" class="w-full h-full object-cover" alt="Bondi Bodegón">
-          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
-            PDF
+      <a href="pdf/Bondi.pdf" target="_blank" rel="noopener noreferrer" 
+         class="group relative h-64 md:h-72 rounded-3xl overflow-hidden bg-neutral-900 shadow-sm transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-8">
+        <img src="img/Bondi.png" alt="Bondi Bodegón" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40">
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent"></div>
+
+        <div class="relative z-10 flex items-center justify-between">
+          <div class="h-10 max-w-[140px] flex items-center">
+            <!-- <img src="img/logo-bondi.png" alt="Logo Bondi" class="h-full w-auto object-contain brightness-0 invert"> -->
+            <span class="text-xs font-semibold uppercase tracking-widest text-stone-300/80 border border-white/20 rounded-full px-3 py-1 backdrop-blur-sm">Bodegón</span>
+          </div>
+          <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:scale-105">
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
           </span>
         </div>
-        <div class="p-6 flex flex-col flex-grow justify-between">
-          <div>
-            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Bodegón Urbano</span>
-            <h3 class="font-bold text-slate-900 text-xl mt-1">Bondi</h3>
-            <p class="text-slate-500 text-sm mt-2">Clásicos de bodegón, milanesas abundantemente servidas, minutas y platos reconfortantes.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100">
-            <a href="pdf/Bondi.pdf" download="Menu_Bondi.pdf" target="_blank" 
-               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
-              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
-            </a>
-          </div>
+
+        <div class="relative z-10">
+          <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Bondi</h2>
         </div>
-      </div>
+      </a>
 
       <!-- 7. Giulietta -->
-      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="heladeria">
-        <div class="aspect-video bg-slate-100 relative overflow-hidden">
-          <img src="img/Giulietta.jpg" alt="Giulietta Gelato">
-          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
-            PDF
+      <a href="pdf/Giulietta.pdf" target="_blank" rel="noopener noreferrer" 
+         class="group relative h-64 md:h-72 rounded-3xl overflow-hidden bg-neutral-900 shadow-sm transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-8">
+        <img src="img/Giulietta.jpg" alt="Giulietta Gelato" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40">
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent"></div>
+
+        <div class="relative z-10 flex items-center justify-between">
+          <div class="h-10 max-w-[140px] flex items-center">
+            <!-- <img src="img/logo-giulietta.png" alt="Logo Giulietta" class="h-full w-auto object-contain brightness-0 invert"> -->
+            <span class="text-xs font-semibold uppercase tracking-widest text-stone-300/80 border border-white/20 rounded-full px-3 py-1 backdrop-blur-sm">Heladería</span>
+          </div>
+          <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:scale-105">
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
           </span>
         </div>
-        <div class="p-6 flex flex-col flex-grow justify-between">
-          <div>
-            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Heladería Artesanal</span>
-            <h3 class="font-bold text-slate-900 text-xl mt-1">Giulietta</h3>
-            <p class="text-slate-500 text-sm mt-2">Helados artesanales, sabores de autor, postres helados, cucuruchos y paletas.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100">
-            <a href="pdf/Giulietta.pdf" download="Menu_Giulietta.pdf" target="_blank" 
-               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
-              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
-            </a>
-          </div>
+
+        <div class="relative z-10">
+          <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Giulietta</h2>
         </div>
-      </div>
+      </a>
 
       <!-- 8. Llama Coffee Roasters -->
-      <div class="menu-card bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col" data-category="cafe">
-        <div class="aspect-video bg-slate-100 relative overflow-hidden">
-          <img src="img/Llama_Coffee.jpg" class="w-full h-full object-cover" alt="Llama Coffee Roasters">
-          <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
-            PDF
+      <a href="pdf/Llama_Coffee.pdf" target="_blank" rel="noopener noreferrer" 
+         class="group relative h-64 md:h-72 rounded-3xl overflow-hidden bg-neutral-900 shadow-sm transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-8">
+        <img src="img/Llama_Coffee.jpg" alt="Llama Coffee Roasters" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40">
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent"></div>
+
+        <div class="relative z-10 flex items-center justify-between">
+          <div class="h-10 max-w-[140px] flex items-center">
+            <!-- <img src="img/logo-llama.png" alt="Logo Llama" class="h-full w-auto object-contain brightness-0 invert"> -->
+            <span class="text-xs font-semibold uppercase tracking-widest text-stone-300/80 border border-white/20 rounded-full px-3 py-1 backdrop-blur-sm">Cafetería</span>
+          </div>
+          <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:scale-105">
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
           </span>
         </div>
-        <div class="p-6 flex flex-col flex-grow justify-between">
-          <div>
-            <span class="text-xs font-bold text-brand-500 uppercase tracking-wider">Café de Especialidad</span>
-            <h3 class="font-bold text-slate-900 text-xl mt-1">Llama Coffee Roasters</h3>
-            <p class="text-slate-500 text-sm mt-2">Tostadores de café, filtrados, pastelería de autor, avocado toasts y desayunos.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100">
-            <a href="pdf/Llama_Coffee.pdf" download="Menu_Llama_Coffee_Roasters.pdf" target="_blank" 
-               class="w-full bg-slate-900 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-xl text-sm text-center transition flex items-center justify-center gap-2">
-              <i class="fa-solid fa-file-pdf text-red-400"></i> Descargar Menú PDF
-            </a>
-          </div>
+
+        <div class="relative z-10">
+          <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Llama Coffee</h2>
         </div>
-      </div>
+      </a>
 
     </div>
-  </section>
+  </main>
 
-  <!-- Footer -->
-  <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 mt-auto">
-    <div class="max-w-6xl mx-auto px-4 text-center md:flex md:justify-between md:text-left">
-      <div class="mb-4 md:mb-0">
-        <p class="text-white font-bold text-lg">MyMark</p>
-        <p class="text-xs text-slate-500">Cartas Digitales</p>
-      </div>
-      <p class="text-xs text-slate-500 self-center">
-        Flor Corva - Diseñadora Multimedial © 2026 Todos los derechos reservados.
-      </p>
+  <!-- Footer Minimalista -->
+  <footer class="border-t border-stone-200/80 py-8 text-neutral-400 text-xs">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="font-medium text-neutral-600 tracking-wider uppercase">MyMark</div>
+      <p>Flor Corva — Diseñadora Multimedial © 2026</p>
     </div>
   </footer>
 
-  <!-- Script para filtrar -->
-  <script>
-    function filterCategory(category) {
-      const cards = document.querySelectorAll('.menu-card');
-      const buttons = document.querySelectorAll('.filter-btn');
-
-      buttons.forEach(btn => {
-        btn.classList.remove('bg-slate-900', 'text-white', 'shadow-sm');
-        btn.classList.add('bg-slate-100', 'text-slate-600');
-      });
-      event.target.classList.remove('bg-slate-100', 'text-slate-600');
-      event.target.classList.add('bg-slate-900', 'text-white', 'shadow-sm');
-
-      cards.forEach(card => {
-        if (category === 'todos' || card.dataset.category === category) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-  </script>
 </body>
 </html>
