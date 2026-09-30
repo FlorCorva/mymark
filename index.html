@@ -11,7 +11,7 @@
   <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
@@ -25,209 +25,244 @@
     }
   </script>
 </head>
-<body class="bg-stone-50 text-neutral-900 antialiased font-sans flex flex-col min-h-screen">
+<body class="bg-[#fcfbf9] text-neutral-900 antialiased font-sans flex flex-col min-h-screen">
 
-  <!-- Header / Navbar Minimalista -->
-  <header class="sticky top-0 z-50 bg-stone-50/80 backdrop-blur-md border-b border-stone-200/60">
-    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" class="inline-block transition-opacity hover:opacity-75">
+  <!-- Header Minimalista -->
+  <header class="sticky top-0 z-50 bg-[#fcfbf9]/90 backdrop-blur-md border-b border-stone-200/70">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      <a href="#" class="inline-block transition-opacity hover:opacity-80">
         <img src="img/mymark.svg" alt="Logo My Mark" class="h-8 w-auto" />
       </a>
-      <span class="text-xs uppercase tracking-widest text-neutral-400 font-medium">Cartas & Menús</span>
+      <span class="text-xs uppercase tracking-widest text-neutral-400 font-semibold">Cartas Digitales</span>
     </div>
   </header>
 
   <!-- Hero Section Centrado -->
-  <section class="pt-16 pb-12 max-w-4xl mx-auto px-6 text-center">
-    <h1 class="text-4xl md:text-5xl font-light tracking-tight text-neutral-900 leading-tight mb-3">
-      Descubrí <span class="font-semibold">las cartas</span>
+  <section class="pt-14 pb-10 max-w-3xl mx-auto px-4 text-center">
+    <h1 class="text-3xl md:text-5xl font-light tracking-tight text-neutral-900 leading-tight mb-3">
+      Descubrí <span class="font-bold">las cartas</span>
     </h1>
-    <p class="text-neutral-500 text-base max-w-md mx-auto">
-      Seleccioná un espacio para visualizar el menú online en tiempo real.
+    <p class="text-neutral-500 text-sm md:text-base">
+      Hacé clic en cualquier local para abrir su menú online en una nueva pestaña.
     </p>
   </section>
 
-  <!-- Grilla de Tarjetas -->
-  <main class="max-w-6xl mx-auto px-6 pb-24 flex-grow w-full">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      
-      <!-- 1. Amsterdam Pizza -->
-      <a href="pdf/Amsterdam_Gorina.pdf" target="_blank" rel="noopener noreferrer" 
-         class="group relative h-64 md:h-72 rounded-3xl overflow-hidden bg-neutral-900 shadow-sm transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-8">
-        <img src="img/Amsterdam.jpg" alt="Amsterdam Pizza" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40">
-        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent"></div>
+  <!-- Contenedor de Bloques Estilo Boceto (Split 50/50) -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 pb-24 flex-grow w-full space-y-6">
 
-        <!-- Slot Superior: Logo / Icono -->
-        <div class="relative z-10 flex items-center justify-between">
-          <div class="h-10 max-w-[140px] flex items-center">
-            <!-- Si tenés el logo en PNG blanco/transparente, reemplazá el span por la etiqueta img: -->
-            <!-- <img src="img/logo-amsterdam.png" alt="Logo Amsterdam" class="h-full w-auto object-contain brightness-0 invert"> -->
-            <span class="text-xs font-semibold uppercase tracking-widest text-stone-300/80 border border-white/20 rounded-full px-3 py-1 backdrop-blur-sm">Pizzería</span>
+<!-- 1. Amsterdam Pizza (Fondo Rojo Brillante de Marca) -->
+    <a href="pdf/Amsterdam_Gorina.pdf" target="_blank" rel="noopener noreferrer"
+       class="group block rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/80 bg-white">
+      <div class="grid grid-cols-1 md:grid-cols-2 min-h-[300px] md:h-80">
+        
+        <!-- Lado Logo / Fondo Rojo AMS -->
+        <div class="bg-[#f4051a] text-white p-6 md:p-8 flex flex-col justify-center items-center text-center relative transition-colors duration-300 group-hover:bg-[#db0417]">
+          
+          <!-- Contenedor del Logo Ampliado -->
+          <div class="h-32 md:h-40 w-full max-w-[280px] flex items-center justify-center mb-3">
+            <img src="img/Amsterdam_Logo.jpg" 
+                 alt="Logo Amsterdam Pizza" 
+                 class="h-full w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-105">
           </div>
-          <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:scale-105">
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-          </span>
-        </div>
 
-        <!-- Info Inferior -->
-        <div class="relative z-10">
-          <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Amsterdam Pizza</h2>
-        </div>
-      </a>
+          <span class="text-xs uppercase tracking-widest text-white/90 font-semibold drop-shadow-sm">Pizza & Empanadas</span>
 
-      <!-- 2. Parada Selecta -->
-      <a href="pdf/Parada_Selecta.pdf" target="_blank" rel="noopener noreferrer" 
-         class="group relative h-64 md:h-72 rounded-3xl overflow-hidden bg-neutral-900 shadow-sm transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-8">
-        <img src="img/Parada_Selecta.jpeg" alt="Parada Selecta" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40">
-        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent"></div>
-
-        <div class="relative z-10 flex items-center justify-between">
-          <div class="h-10 max-w-[140px] flex items-center">
-            <!-- <img src="img/logo-paradaselecta.png" alt="Logo Parada Selecta" class="h-full w-auto object-contain brightness-0 invert"> -->
-            <span class="text-xs font-semibold uppercase tracking-widest text-stone-300/80 border border-white/20 rounded-full px-3 py-1 backdrop-blur-sm">Sandwiches & Tapas</span>
+          <div class="absolute bottom-4 left-6 hidden md:flex items-center gap-1.5 text-xs text-white/80 group-hover:text-white transition-colors">
+            <span>Ver menú</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
           </div>
-          <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:scale-105">
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-          </span>
         </div>
 
-        <div class="relative z-10">
-          <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Parada Selecta</h2>
+        <!-- Lado Foto -->
+        <div class="relative overflow-hidden bg-neutral-900 h-56 md:h-full">
+          <img src="img/Amsterdam.jpg" alt="Amsterdam Pizza local" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
         </div>
-      </a>
 
-      <!-- 3. Mura Sushi Nikkei -->
-      <a href="pdf/Mura.pdf" target="_blank" rel="noopener noreferrer" 
-         class="group relative h-64 md:h-72 rounded-3xl overflow-hidden bg-neutral-900 shadow-sm transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-8">
-        <img src="img/Mura.jpg" alt="Mura Sushi Nikkei" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40">
-        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent"></div>
+      </div>
+    </a>
 
-        <div class="relative z-10 flex items-center justify-between">
-          <div class="h-10 max-w-[140px] flex items-center">
-            <!-- <img src="img/logo-mura.png" alt="Logo Mura" class="h-full w-auto object-contain brightness-0 invert"> -->
-            <span class="text-xs font-semibold uppercase tracking-widest text-stone-300/80 border border-white/20 rounded-full px-3 py-1 backdrop-blur-sm">Sushi & Nikkei</span>
+<!-- 2. Parada Selecta (Fondo Blanco Pleno Monocromático) -->
+    <a href="pdf/Parada_Selecta.pdf" target="_blank" rel="noopener noreferrer"
+       class="group block rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/80 bg-white">
+      <div class="grid grid-cols-1 md:grid-cols-2 min-h-[300px] md:h-80">
+        
+        <!-- Lado Logo / Fondo Blanco Puro -->
+        <div class="bg-black text-neutral-900 p-6 md:p-8 flex flex-col justify-center items-center text-center relative transition-colors duration-300 group-hover:bg-stone-50">
+          
+          <!-- Contenedor del Logo -->
+          <div class="h-28 md:h-36 w-full max-w-[260px] flex items-center justify-center mb-3">
+            <img src="img/Parada_Selecta_Logo.png" 
+                 alt="Logo Parada Selecta" 
+                 class="max-h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-105"> 
           </div>
-          <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:scale-105">
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-          </span>
-        </div>
 
-        <div class="relative z-10">
-          <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Mura Sushi Nikkei</h2>
-        </div>
-      </a>
+          <span class="text-xs uppercase tracking-widest text-neutral-500 font-medium">Sandwiches & Tapas</span>
 
-      <!-- 4. La Chimbotana -->
-      <a href="pdf/LaChimbotana.pdf" target="_blank" rel="noopener noreferrer" 
-         class="group relative h-64 md:h-72 rounded-3xl overflow-hidden bg-neutral-900 shadow-sm transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-8">
-        <img src="img/LaChimbotana.png" alt="La Chimbotana" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40">
-        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent"></div>
-
-        <div class="relative z-10 flex items-center justify-between">
-          <div class="h-10 max-w-[140px] flex items-center">
-            <!-- <img src="img/logo-lachimbotana.png" alt="Logo La Chimbotana" class="h-full w-auto object-contain brightness-0 invert"> -->
-            <span class="text-xs font-semibold uppercase tracking-widest text-stone-300/80 border border-white/20 rounded-full px-3 py-1 backdrop-blur-sm">Cocina Peruana</span>
+          <div class="absolute bottom-4 left-6 hidden md:flex items-center gap-1.5 text-xs text-neutral-400 group-hover:text-neutral-900 transition-colors">
+            <span>Ver menú</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
           </div>
-          <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:scale-105">
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-          </span>
         </div>
 
-        <div class="relative z-10">
-          <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">La Chimbotana</h2>
+        <!-- Lado Foto -->
+        <div class="relative overflow-hidden bg-neutral-900 h-56 md:h-full">
+          <img src="img/Parada_Selecta.jpeg" alt="Parada Selecta picadas y sandwiches" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
         </div>
-      </a>
 
-      <!-- 5. Le Grill's -->
-      <a href="pdf/LeGrills.pdf" target="_blank" rel="noopener noreferrer" 
-         class="group relative h-64 md:h-72 rounded-3xl overflow-hidden bg-neutral-900 shadow-sm transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-8">
-        <img src="img/LeGrill.png" alt="Le Grill's" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40">
-        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent"></div>
+      </div>
+    </a>
 
-        <div class="relative z-10 flex items-center justify-between">
-          <div class="h-10 max-w-[140px] flex items-center">
-            <!-- <img src="img/logo-legrills.png" alt="Logo Le Grill's" class="h-full w-auto object-contain brightness-0 invert"> -->
-            <span class="text-xs font-semibold uppercase tracking-widest text-stone-300/80 border border-white/20 rounded-full px-3 py-1 backdrop-blur-sm">Parrilla & Fuegos</span>
+<!-- 3. Mura Sushi Nikkei (Fondo Negro Puro de Marca) -->
+    <a href="pdf/Mura.pdf" target="_blank" rel="noopener noreferrer"
+       class="group block rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/80 bg-white">
+      <div class="grid grid-cols-1 md:grid-cols-2 min-h-[300px] md:h-80">
+        
+        <!-- Lado Logo / Fondo Negro Mura -->
+        <div class="bg-black text-white p-6 md:p-8 flex flex-col justify-center items-center text-center relative transition-colors duration-300 group-hover:bg-neutral-950">
+          
+          <!-- Contenedor del Logo Ampliado -->
+          <div class="h-32 md:h-40 w-full max-w-[280px] flex items-center justify-center mb-3">
+            <img src="img/Mura_Logo.png" 
+                 alt="Logo Mura Sushi Nikkei" 
+                 class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105"> 
           </div>
-          <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:scale-105">
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-          </span>
-        </div>
 
-        <div class="relative z-10">
-          <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Le Grill's</h2>
-        </div>
-      </a>
+          <span class="text-xs uppercase tracking-widest text-neutral-400 font-medium">Sushi & Cocina Nikkei</span>
 
-      <!-- 6. Bondi -->
-      <a href="pdf/Bondi.pdf" target="_blank" rel="noopener noreferrer" 
-         class="group relative h-64 md:h-72 rounded-3xl overflow-hidden bg-neutral-900 shadow-sm transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-8">
-        <img src="img/Bondi.png" alt="Bondi Bodegón" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40">
-        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent"></div>
-
-        <div class="relative z-10 flex items-center justify-between">
-          <div class="h-10 max-w-[140px] flex items-center">
-            <!-- <img src="img/logo-bondi.png" alt="Logo Bondi" class="h-full w-auto object-contain brightness-0 invert"> -->
-            <span class="text-xs font-semibold uppercase tracking-widest text-stone-300/80 border border-white/20 rounded-full px-3 py-1 backdrop-blur-sm">Bodegón</span>
+          <div class="absolute bottom-4 left-6 hidden md:flex items-center gap-1.5 text-xs text-neutral-500 group-hover:text-white transition-colors">
+            <span>Ver menú</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
           </div>
-          <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:scale-105">
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-          </span>
         </div>
 
-        <div class="relative z-10">
-          <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Bondi</h2>
+        <!-- Lado Foto -->
+        <div class="relative overflow-hidden bg-neutral-900 h-56 md:h-full">
+          <img src="img/Mura.jpg" alt="Mura Sushi piezas y combinados" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
         </div>
-      </a>
 
-      <!-- 7. Giulietta -->
-      <a href="pdf/Giulietta.pdf" target="_blank" rel="noopener noreferrer" 
-         class="group relative h-64 md:h-72 rounded-3xl overflow-hidden bg-neutral-900 shadow-sm transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-8">
-        <img src="img/Giulietta.jpg" alt="Giulietta Gelato" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40">
-        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent"></div>
+      </div>
+    </a>
 
-        <div class="relative z-10 flex items-center justify-between">
-          <div class="h-10 max-w-[140px] flex items-center">
-            <!-- <img src="img/logo-giulietta.png" alt="Logo Giulietta" class="h-full w-auto object-contain brightness-0 invert"> -->
-            <span class="text-xs font-semibold uppercase tracking-widest text-stone-300/80 border border-white/20 rounded-full px-3 py-1 backdrop-blur-sm">Heladería</span>
+    <!-- 4. La Chimbotana (Fondo Azul Marino Costero) -->
+    <a href="pdf/LaChimbotana.pdf" target="_blank" rel="noopener noreferrer"
+       class="group block rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/80 bg-white">
+      <div class="grid grid-cols-1 md:grid-cols-2 min-h-[220px] md:h-64">
+        <div class="bg-[#1e3a5f] text-white p-8 flex flex-col justify-center items-center text-center relative transition-colors duration-300 group-hover:bg-[#152a45]">
+          <div class="max-h-20 max-w-[200px] flex items-center justify-center mb-2">
+            <!-- <img src="img/logo_lachimbotana.png" alt="Logo La Chimbotana" class="max-h-16 w-auto object-contain brightness-0 invert"> -->
+            <span class="text-3xl md:text-4xl font-extrabold tracking-tight uppercase">La Chimbotana</span>
           </div>
-          <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:scale-105">
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-          </span>
-        </div>
-
-        <div class="relative z-10">
-          <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Giulietta</h2>
-        </div>
-      </a>
-
-      <!-- 8. Llama Coffee Roasters -->
-      <a href="pdf/Llama_Coffee.pdf" target="_blank" rel="noopener noreferrer" 
-         class="group relative h-64 md:h-72 rounded-3xl overflow-hidden bg-neutral-900 shadow-sm transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-8">
-        <img src="img/Llama_Coffee.jpg" alt="Llama Coffee Roasters" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-40">
-        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent"></div>
-
-        <div class="relative z-10 flex items-center justify-between">
-          <div class="h-10 max-w-[140px] flex items-center">
-            <!-- <img src="img/logo-llama.png" alt="Logo Llama" class="h-full w-auto object-contain brightness-0 invert"> -->
-            <span class="text-xs font-semibold uppercase tracking-widest text-stone-300/80 border border-white/20 rounded-full px-3 py-1 backdrop-blur-sm">Cafetería</span>
+          <span class="text-xs uppercase tracking-widest text-sky-200 font-medium">Auténtica Cocina Peruana</span>
+          <div class="absolute bottom-4 left-6 hidden md:flex items-center gap-1.5 text-xs text-sky-200/80">
+            <span>Ver menú</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
           </div>
-          <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:scale-105">
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-          </span>
+        </div>
+        <div class="relative overflow-hidden bg-neutral-900 h-48 md:h-full">
+          <img src="img/LaChimbotana.png" alt="La Chimbotana plato" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 5. Le Grill's (Fondo Brasa / Fuego Tostado) -->
+    <a href="pdf/LeGrills.pdf" target="_blank" rel="noopener noreferrer"
+       class="group block rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/80 bg-white">
+      <div class="grid grid-cols-1 md:grid-cols-2 min-h-[220px] md:h-64">
+        <div class="bg-[#78350f] text-white p-8 flex flex-col justify-center items-center text-center relative transition-colors duration-300 group-hover:bg-[#632a0a]">
+          <div class="max-h-20 max-w-[200px] flex items-center justify-center mb-2">
+            <!-- <img src="img/logo_legrills.png" alt="Logo Le Grills" class="max-h-16 w-auto object-contain brightness-0 invert"> -->
+            <span class="text-3xl md:text-4xl font-extrabold tracking-tight uppercase">Le Grill's</span>
+          </div>
+          <span class="text-xs uppercase tracking-widest text-amber-200 font-medium">Parrilla & Brasas</span>
+          <div class="absolute bottom-4 left-6 hidden md:flex items-center gap-1.5 text-xs text-amber-200/80">
+            <span>Ver menú</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </div>
+        </div>
+        <div class="relative overflow-hidden bg-neutral-900 h-48 md:h-full">
+          <img src="img/LeGrill.png" alt="Le Grill's corte de carne" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 6. Bondi (Fondo Ocre / Mostaza Bodegón) -->
+    <a href="pdf/Bondi.pdf" target="_blank" rel="noopener noreferrer"
+       class="group block rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/80 bg-white">
+      <div class="grid grid-cols-1 md:grid-cols-2 min-h-[220px] md:h-64">
+        <div class="bg-[#b45309] text-white p-8 flex flex-col justify-center items-center text-center relative transition-colors duration-300 group-hover:bg-[#92400e]">
+          <div class="max-h-20 max-w-[200px] flex items-center justify-center mb-2">
+            <!-- <img src="img/logo_bondi.png" alt="Logo Bondi" class="max-h-16 w-auto object-contain brightness-0 invert"> -->
+            <span class="text-3xl md:text-4xl font-extrabold tracking-tight uppercase">Bondi</span>
+          </div>
+          <span class="text-xs uppercase tracking-widest text-amber-100 font-medium">Bodegón Urbano</span>
+          <div class="absolute bottom-4 left-6 hidden md:flex items-center gap-1.5 text-xs text-amber-100/80">
+            <span>Ver menú</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </div>
+        </div>
+        <div class="relative overflow-hidden bg-neutral-900 h-48 md:h-full">
+          <img src="img/Bondi.png" alt="Bondi Bodegón platos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+        </div>
+      </div>
+    </a>
+
+<!-- 7. Giulietta (Fondo Rojo Cereza de Marca) -->
+    <a href="pdf/Giulietta.pdf" target="_blank" rel="noopener noreferrer"
+       class="group block rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/80 bg-white">
+      <div class="grid grid-cols-1 md:grid-cols-2 min-h-[300px] md:h-80">
+        
+        <!-- Lado Logo / Fondo Rojo -->
+        <div class="bg-[#cf152b] text-white p-6 md:p-8 flex flex-col justify-center items-center text-center relative transition-colors duration-300 group-hover:bg-[#b81024]">
+          <div class="h-32 md:h-40 w-full max-w-[280px] flex items-center justify-center mb-3">
+           <img src="img/Giulietta_Logo.jpg" alt="Logo Giulietta Gelato" class="h-full w-auto object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
+          </div>
+          <span class="text-xs uppercase tracking-widest text-red-100 font-medium">Heladería Artesanal</span>
+          <div class="absolute bottom-4 left-6 hidden md:flex items-center gap-1.5 text-xs text-red-100/90">
+            <span>Ver menú</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </div>
         </div>
 
-        <div class="relative z-10">
-          <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Llama Coffee</h2>
+        <!-- Lado Foto -->
+        <div class="relative overflow-hidden bg-neutral-900 h-56 md:h-full">
+          <img src="img/Giulietta.jpg" alt="Giulietta helados" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
         </div>
-      </a>
 
-    </div>
+      </div>
+    </a>
+
+<!-- 8. Llama Coffee Roasters (Fondo Warm Taupe / Café Tostado) -->
+    <a href="pdf/Llama_Coffee.pdf" target="_blank" rel="noopener noreferrer"
+       class="group block rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/80 bg-white">
+      <div class="grid grid-cols-1 md:grid-cols-2 min-h-[300px] md:h-80">
+        <div class="bg-[#009fe3] text-white p-6 md:p-8 flex flex-col justify-center items-center text-center relative transition-colors duration-300 group-hover:bg-[#008ecb]">
+          <div class="h-32 md:h-40 w-full max-w-[280px] flex items-center justify-center mb-3">
+            <img src="img/Llama_Logo.png" alt="Logo Llama Coffee" class="h-full w-auto object-contain brightness-0 invert drop-shadow-sm transition-transform duration-300 group-hover:scale-105"> 
+          </div>
+          <span class="text-xs uppercase tracking-widest text-sky-100 font-medium">Café de Especialidad</span>
+          <div class="absolute bottom-4 left-6 hidden md:flex items-center gap-1.5 text-xs text-sky-100/90">
+            <span>Ver menú</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </div>
+        </div>
+        <div class="relative overflow-hidden bg-neutral-900 h-56 md:h-full">
+          <img src="img/Llama_Coffee.jpg" alt="Llama Coffee cafetería" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+        </div>
+      </div>
+    </a>
   </main>
 
   <!-- Footer Minimalista -->
   <footer class="border-t border-stone-200/80 py-8 text-neutral-400 text-xs">
-    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-4">
       <div class="font-medium text-neutral-600 tracking-wider uppercase">MyMark</div>
       <p>Flor Corva — Diseñadora Multimedial © 2026</p>
     </div>
